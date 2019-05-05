@@ -6,6 +6,4 @@ const dbSearch = (searchInput, database) => {
     return searchResult.length > 3 ? searchResult.slice(0, 3) : searchResult;
 };
 
-//console.log(dbSearch('uc', db));
-
 module.exports = dbSearch;
