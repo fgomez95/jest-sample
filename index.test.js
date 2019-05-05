@@ -19,4 +19,12 @@ describe('dbSearch', () => {
         const lengthFlag = resLength <= 3 && resLength > 0;
         expect(lengthFlag).toBe(true);
     });
+    it('should return an empty string if undefined search string', () => {
+        const result = dbSearch(undefined, db);
+        expect(result).toEqual([]);
+    });
+    it('should return an empty string if null search string', () => {
+        const result = dbSearch(null, db);
+        expect(result).toEqual([]);
+    });
 });
