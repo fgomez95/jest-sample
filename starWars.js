@@ -1,7 +1,8 @@
 var fetch = require('node-fetch');
 
-function getPeople(fetch){
-    return fetch('https://swapi.co/api/people')
+function getPeople(fetch, page){
+    const pagination = page ? `/?page=${page}` : '';
+    return fetch(`https://swapi.co/api/people${pagination}`)
         .then(response => response.json())
         .then(res => ({
             count: res.count,
